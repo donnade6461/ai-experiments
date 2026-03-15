@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  # OpenWebUI - Single User Optimized
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    ports:
+      - "3001:8080"
+    volumes:
+      - ./data/open-webui:/app/backend/data
+      - ./config/openwebui:/app/backend/config:ro
+    environment:
+      # Native Ollama Connection
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      
+      # Single User Optimizations
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY}
+      - DEFAULT_USER_ROLE=admin
+      - ENABLE_SIGNUP=false
+      - ENABLE_LOGIN=false
+      - ENABLE_OAUTH_SIGNUP=false
+      
+      # Performance Optimizations
+      - ENABLE_RAG_HYBRID_SEARCH=true
+      - CHUNK_SIZE=1000
+      - CHUNK_OVERLAP=200
+      - RAG_TEMPLATE=Use the following context to answer the question:\n\n{context}\n\nQuestion: {query}
+      
+      # SearXNG Integration
+      - ENABLE_RAG_WEB_SEARCH=true
+      - RAG_WEB_SEARCH_ENGINE=searxng
+      - SEARXNG_QUERY_URL=http://searxng:8080/search?q=<query>&format=json
+      
+      # Development Features
+      - ENABLE_MODEL_FILTER=true
+      - ENABLE_ADMIN_EXPORT=true
+      - SHOW_ADMIN_DETAILS=true
+      - WEBUI_AUTH=false
+      - TASK_MODEL_EXTERNAL=false
+      
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - searxng
+    networks:
+      - ai-stack
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+
+  # SearXNG - Privacy-Focused Search
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./config/searxng/settings.yml:/etc/searxng/settings.yml:ro
+      - ./data/searxng:/var/cache/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8081
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
+    depends_on:
+      - redis
+    networks:
+      - ai-stack
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+
+  # Redis - High Performance Caching
+  redis:
+    image: redis:7-alpine
+    container_name: redis-ai-stack
+    restart: unless-stopped
+    command: >
+      redis-server
+      --save 60 100
+      --maxmemory 512mb
+      --maxmemory-policy allkeys-lru
+      --appendonly yes
+      --auto-aof-rewrite-percentage 100
+      --auto-aof-rewrite-min-size 64mb
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6380:6379"
+    networks:
+      - ai-stack
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  # Nginx Reverse Proxy (Optional - Production Mode)
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-ai-stack
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - open-webui
+      - searxng
+    networks:
+      - ai-stack
+    profiles:
+      - production
+
+networks:
+  ai-stack:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  redis-data:
+    driver: local
